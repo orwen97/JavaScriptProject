@@ -3,7 +3,7 @@
 
 // recorrido: entro al sitio 
 // me da la bienvenida
-// me pregunta que quiero hacer 
+// me pregunta que quiero hacer "¿Que deseas hacer hoy? Para agregar una tarea ingresa la palabra -tarea-, para visualizar el dia ingresa -ver-"
 // respondo una de dos opciones
 
 // si respondo tarea me pregunta a que dia quiero ir 
@@ -18,25 +18,12 @@
 //si no hay nada tira mensaje de que esta el dia libre
 //me pregunta si quiero agregar tarea o ver
 
+// json[key] = value
 
-
-
-// const DATE = prompt("¿A que dia del mes quieres ir?");
-// const ADD_TASK = prompt("¿Quieres agregar una tarea? Responde SI o NO");
-// const DISPLAY_DAY = prompt("¿Quieres ver las tareas que tienes para este dia?");
-// const ACTIONS = prompt("¿Que deseas hacer hoy? Para agregar una tarea ingresa la palabra -tarea-, para visualizar el dia ingresa -ver-").toLocaleLowerCase();
-
-let loop = 0;
 let registry = {};
-
-
-function addTask(date, mensaje){
-    let date = prompt("ingresa el dia del mes de la tarea con numeros:")
-    let mensaje = prompt("Escribe la tarea");
-    console.log("Haz añadido una tarea para el dia " + date);
-}
-
-
+let day
+let task;
+let contador = 1;
 
 function greeting() {
     alert("¡Bienvenido a tu agenda personal!");
@@ -44,28 +31,23 @@ function greeting() {
 
 greeting();
 
-// do {
-//     const ACTIONS = prompt("¿Que deseas hacer hoy? Para agregar una tarea ingresa la palabra -tarea-, para visualizar el dia ingresa -ver-").toLocaleLowerCase();
-//     if(ACTIONS === "tarea"){
-//         addTask(date, mensaje);
-//     } else if(ACTIONS === "ver") {
-//         alert()
-//     }
-// } while(){
+while (contador < 2){
+    const ACTIONS = prompt("¿Que deseas hacer? Para agregar una tarea ingresa la palabra -tarea-, para visualizar el dia ingresa -ver-").toLocaleLowerCase();
+    if(ACTIONS === "tarea"){
+        let day = prompt("Ingresa el numero del mes al que quieres ir");
+        if(isNaN(day)){
+            alert("Por favor ingresa solo tipo numerico");
+        }
+        let task = prompt("ingresa las notas de la fecha");
+        registry[day] = task;
+        alert("Añadiste una tarea en el dia " + day);
+    } else if(ACTIONS === "ver"){
+        let day = prompt("Ingresa el numero del mes al que quieres ir");
+        if(isNaN(day)){
+            alert("Por favor ingresa solo tipo numerico");
+        }
+        alert(registry[day]);
+    }
+}
 
-// }
 
-
-
-
-
-// switch (ACTIONS) {
-//     case "ver":
-//         console.log();
-//         break;
-//     case "tarea":
-//         console.log();
-//         break;
-//     default:
-//         console.log("Ingresa una opcion valida")
-// }
