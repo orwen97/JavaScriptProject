@@ -20,34 +20,88 @@
 
 // json[key] = value
 
-let registry = {};
-let day
-let task;
+// let registry = {};
+// let day
+// let task;
+// let contador = 1;
+
+// function greeting() {
+//     alert("¡Bienvenido a tu agenda personal!");
+// }
+
+// greeting();
+
+// while (contador < 2){
+//     const ACTIONS = prompt("¿Que deseas hacer? Para agregar una tarea ingresa la palabra -tarea-, para visualizar el dia ingresa -ver-").toLocaleLowerCase();
+//     if(ACTIONS === "tarea"){
+//         let day = prompt("Ingresa el numero del mes al que quieres ir");
+//         if(isNaN(day)){
+//             alert("Por favor ingresa solo tipo numerico");
+//         }
+//         let task = prompt("ingresa las notas de la fecha");
+//         registry[day] = task;
+//         alert("Añadiste una tarea en el dia " + day);
+//     } else if(ACTIONS === "ver"){
+//         let day = prompt("Ingresa el numero del mes al que quieres ir");
+//         if(isNaN(day)){
+//             alert("Por favor ingresa solo tipo numerico");
+//         }
+//         alert(registry[day]);
+//     }
+// }
+
+
+// SEGUNDA ENTREGA
 let contador = 1;
 
 function greeting() {
     alert("¡Bienvenido a tu agenda personal!");
 }
 
-greeting();
-
-while (contador < 2){
-    const ACTIONS = prompt("¿Que deseas hacer? Para agregar una tarea ingresa la palabra -tarea-, para visualizar el dia ingresa -ver-").toLocaleLowerCase();
-    if(ACTIONS === "tarea"){
-        let day = prompt("Ingresa el numero del mes al que quieres ir");
-        if(isNaN(day)){
-            alert("Por favor ingresa solo tipo numerico");
-        }
-        let task = prompt("ingresa las notas de la fecha");
-        registry[day] = task;
-        alert("Añadiste una tarea en el dia " + day);
-    } else if(ACTIONS === "ver"){
-        let day = prompt("Ingresa el numero del mes al que quieres ir");
-        if(isNaN(day)){
-            alert("Por favor ingresa solo tipo numerico");
-        }
-        alert(registry[day]);
+class Evento {
+    constructor (dia, tarea) {
+        this.dia = dia;
+        this.tarea = tarea;
     }
 }
 
+const nuevoEvento = new Evento (1, "nueva tarea");
 
+greeting();
+
+while (contador === 1) {
+    const ACTIONS = prompt("¿Que deseas hacer? Para agregar una tarea ingresa la palabra -tarea-, para visualizar el dia ingresa -ver-").toLocaleLowerCase
+    if (ACTIONS === "tarea") {
+        const nuevoDia= prompt("Ingresa el numero del mes al que quieres ir");
+        if(isNaN(nuevoDia)){
+            alert("Por favor ingresa solo tipo numerico");
+        }
+        const nuevaTarea = prompt("ingresa las notas de la fecha");
+        if(nuevoDia && nuevaTarea) {
+            nuevoEvento.dia = nuevoDia;
+            nuevoEvento.tarea = nuevaTarea;
+        } 
+        alert ("agregaste la tarea: " + nuevaTarea + " al dia " + nuevoDia);
+    } else if (ACTIONS === "ver") {
+        const nuevoDia = prompt("Ingresa el numero del mes al que quieres ir");
+        if(isNaN(nuevoDia)){
+            alert("Por favor ingresa solo tipo numerico");
+        }
+        alert ()
+    }
+}
+
+// diasMes[1].evento
+// const diasMes = [];
+
+// for (let idx = 1; idx <= 31; idx++) {
+//     diasMes.append(Dia([]))
+// }
+// [Dia, Dia, ...]
+
+// class Dia {
+//     constructor (eventos) {
+//         this.fecha = ""
+//         this.eventos = [...eventos];
+//     }
+// }
