@@ -20,34 +20,51 @@
 
 // json[key] = value
 
-let registry = {};
-let day
-let task;
-let contador = 1;
 
+// let registry = {};
+// let day
+// let task;
+// let contador = 1;
+
+// function greeting() {
+//     alert("¡Bienvenido a tu agenda personal!");
+// }
+
+// greeting();
+
+// while (contador < 2){
+//     const ACTIONS = prompt("¿Que deseas hacer? Para agregar una tarea ingresa la palabra -tarea-, para visualizar el dia ingresa -ver-").toLocaleLowerCase();
+//     if(ACTIONS === "tarea"){
+//         let day = prompt("Ingresa el numero del mes al que quieres ir");
+//         if(isNaN(day)){
+//             alert("Por favor ingresa solo tipo numerico");
+//         }
+//         let task = prompt("ingresa las notas de la fecha");
+//         registry[day] = task;
+//         alert("Añadiste una tarea en el dia " + day);
+//     } else if(ACTIONS === "ver"){
+//         let day = prompt("Ingresa el numero del mes al que quieres ir");
+//         if(isNaN(day)){
+//             alert("Por favor ingresa solo tipo numerico");
+//         }
+//         alert(registry[day]);
+//     }
+// }
+
+
+// inicio
 function greeting() {
     alert("¡Bienvenido a tu agenda personal!");
 }
-
 greeting();
+const CURRENT_DATE = document.getElementById("currentDate");
+let actualDate = new Date();
+// console.log(actualDate); 
 
-while (contador < 2){
-    const ACTIONS = prompt("¿Que deseas hacer? Para agregar una tarea ingresa la palabra -tarea-, para visualizar el dia ingresa -ver-").toLocaleLowerCase();
-    if(ACTIONS === "tarea"){
-        let day = prompt("Ingresa el numero del mes al que quieres ir");
-        if(isNaN(day)){
-            alert("Por favor ingresa solo tipo numerico");
-        }
-        let task = prompt("ingresa las notas de la fecha");
-        registry[day] = task;
-        alert("Añadiste una tarea en el dia " + day);
-    } else if(ACTIONS === "ver"){
-        let day = prompt("Ingresa el numero del mes al que quieres ir");
-        if(isNaN(day)){
-            alert("Por favor ingresa solo tipo numerico");
-        }
-        alert(registry[day]);
-    }
-}
+CURRENT_DATE.innerHTML = `<p>
+                            HOY <br> ${ actualDate.toDateString() }
+                        </p>`
 
+//clases y storage de informacion de la agenda
+//calendario :
 
