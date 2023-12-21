@@ -51,23 +51,42 @@
 //     }
 // }
 
+//variables y arrays
+
+//fechas para el calendario
+const MONTH_NAMES = ["ENERO", "FEBRERO", "MARZO", "ABRIL", "MAYO", "JUNIO", "JULIO", "AGOSTO", "SEMPTIEMBRE", "OCTUBRE", "NOVIEMBRE", "DICIEMBRE"]
+const DIAS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]
+let actualMonth = new Date();
+let actualYear = new Date();
+let monthName = MONTH_NAMES[actualMonth.getMonth()];
 
 // inicio
 function greeting() {
     alert("¡Bienvenido a tu agenda personal!");
 }
 greeting();
+
+// MES Y AÑO ACTUAL CALENDARIO
 const CURRENT_DATE = document.getElementById("currentDate");
-let actualDate = new Date();
-// console.log(actualDate); 
-
 CURRENT_DATE.innerHTML = `<p>
-                            HOY <br> ${ actualDate.toDateString() }
-                        </p>`
+                            ${ monthName }
+                            ${ actualYear.getFullYear()}
+                        </p>`;
 
-//clases y storage de informacion de la agenda
-//calendario :
-//1- botones de acciones
-const BUTTON_ACTIONS = document.getElementById("buttons");
-BUTTON_ACTIONS.innerHTML = `<button class = "searchTask">Buscar una fecha</button>
-                <button class = "createTask">Agendar nueva tarea</button>`;
+// imprimir los dias del mes
+const DAYS_WEEK = document.getElementById("daysWeek");
+DIAS.forEach(element => {
+    const boton = document.createElement("button");
+    boton.className = "daysButton";
+    boton.innerHTML = `${element}`;
+    DAYS_WEEK.appendChild(boton);
+});
+
+
+
+
+//actions
+// const BUTTON_ACTIONS = document.getElementById("buttons");
+// BUTTON_ACTIONS.innerHTML = `<button class = "searchTask">Buscar una fecha</button>
+//                             <button class = "createTask">Agendar nueva tarea</button>`;
+
