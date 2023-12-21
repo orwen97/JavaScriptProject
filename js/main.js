@@ -67,4 +67,7 @@ CURRENT_DATE.innerHTML = `<p>
 
 //clases y storage de informacion de la agenda
 //calendario :
-
+//1- botones de acciones
+const BUTTON_ACTIONS = document.getElementById("buttons");
+BUTTON_ACTIONS.innerHTML = `<button class = "searchTask">Buscar una fecha</button>
+                <button class = "createTask">Agendar nueva tarea</button>`;

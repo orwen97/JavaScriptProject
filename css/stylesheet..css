@@ -39,7 +39,34 @@ main {
     border-radius: 12px;
     box-shadow: 10px 10px 40px rgb(92, 92, 92);
 }
+#buttons {
+    display: flex;
+    justify-content: center;
+    height: fit-content;
+    margin-top: 4rem;
+    gap: 2rem;
+}
 
+.searchTask {
+    background-color:rgb(254, 254, 254);
+    width: 9rem;
+    height: 2rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    box-shadow: 4px 4px 10px rgb(97, 84, 113),
+                -4px -4px 9px rgb(255, 241, 252);
+    border-style: none;
+}
+.createTask {
+    background-color:rgb(254, 254, 254);
+    width: 9rem;
+    height: 2rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    box-shadow: 4px 4px 10px rgb(97, 84, 113),
+                -4px -4px 9px rgb(255, 241, 252);
+    border-style: none;
+}
 
 footer {
     width: 100%;
