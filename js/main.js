@@ -73,15 +73,23 @@ CURRENT_DATE.innerHTML = `<p>
                             ${ actualYear.getFullYear()}
                         </p>`;
 
-// imprimir los dias del mes
+// imprimir los dias del mes - por cada dia, modal popup
+
 const DAYS_WEEK = document.getElementById("daysWeek");
+const CLOSE_MODAL = document.getElementById("cerrarModal");
+const NEW_TASK = document.getElementById("newTask");
 DIAS.forEach(element => {
     const boton = document.createElement("button");
     boton.className = "daysButton";
     boton.innerHTML = `${element}`;
     boton.addEventListener("click", () => {
         modalPopUp.showModal();
+
     }) 
+    CLOSE_MODAL.addEventListener("click", () => {
+        modalPopUp.close();
+    })
+
     DAYS_WEEK.appendChild(boton);
 });
 
