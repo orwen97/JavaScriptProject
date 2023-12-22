@@ -79,9 +79,33 @@ DIAS.forEach(element => {
     const boton = document.createElement("button");
     boton.className = "daysButton";
     boton.innerHTML = `${element}`;
+    boton.addEventListener("click", () => {
+        modalPopUp.showModal();
+    }) 
     DAYS_WEEK.appendChild(boton);
 });
 
+
+
+// Crear dialog para el pop up de las fechas
+
+//abrir modal
+
+
+
+//modal
+
+// const btnAbrirModal = document.getElementById("btnAbrirModal");
+// const btnCerrarModal = document.getElementById("btnCerrarModal");
+// const modal = document.getElementById("modal");
+
+// btnAbrirModal.addEventListener("click", () => {
+//     modal.showModal();
+// });
+
+// btnCerrarModal.addEventListener("click", () => {
+//     modal.close();
+// })
 
 
 
