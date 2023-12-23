@@ -115,8 +115,16 @@ DIAS_OBJETO.forEach(dia => {
 
 
 //colorTheme
+const colorTheme = document.getElementById("modeTheme");
 
-
+colorTheme.addEventListener("click", () => {
+    document.body.classList.toggle("orange");
+    if(document.body.classList.contains("orange")){
+        localStorage.setItem("mode", "orange");
+    } else {
+        localStorage.setItem("mode", "pink");
+    }
+});
 
 
 
