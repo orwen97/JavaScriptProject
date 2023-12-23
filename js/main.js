@@ -56,9 +56,25 @@
 //fechas para el calendario
 const MONTH_NAMES = ["ENERO", "FEBRERO", "MARZO", "ABRIL", "MAYO", "JUNIO", "JULIO", "AGOSTO", "SEMPTIEMBRE", "OCTUBRE", "NOVIEMBRE", "DICIEMBRE"]
 const DIAS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]
+const DIAS_OBJETO = [];
+
+class Dia {
+    constructor(numero) {
+        this.numero = numero;
+        this.tareas = {};
+    }
+
+    agregarTarea(hora, tarea) {
+        this.tareas[hora] = tarea;
+    }
+}
+DIAS.forEach(numero => DIAS_OBJETO.push(new Dia(numero)));
+
+
 let actualMonth = new Date();
 let actualYear = new Date();
 let monthName = MONTH_NAMES[actualMonth.getMonth()];
+
 
 // inicio
 function greeting() {
@@ -78,14 +94,18 @@ CURRENT_DATE.innerHTML = `<p>
 const DAYS_WEEK = document.getElementById("daysWeek");
 const CLOSE_MODAL = document.getElementById("cerrarModal");
 const NEW_TASK = document.getElementById("newTask");
-DIAS.forEach(element => {
+DIAS_OBJETO.forEach(dia => {
     const boton = document.createElement("button");
     boton.className = "daysButton";
-    boton.innerHTML = `${element}`;
-    boton.addEventListener("click", () => {
+    boton.innerHTML = `${dia.numero}`;
+    boton.addEventListener("click", dia => {
         modalPopUp.showModal();
-
+        // numero.agregarTarea(asd, ads)
     }) 
+    //clase objetos para almacenar tareas
+
+
+    //cerrar modal
     CLOSE_MODAL.addEventListener("click", () => {
         modalPopUp.close();
     })
@@ -94,31 +114,10 @@ DIAS.forEach(element => {
 });
 
 
-
-// Crear dialog para el pop up de las fechas
-
-//abrir modal
+//colorTheme
 
 
 
-//modal
-
-// const btnAbrirModal = document.getElementById("btnAbrirModal");
-// const btnCerrarModal = document.getElementById("btnCerrarModal");
-// const modal = document.getElementById("modal");
-
-// btnAbrirModal.addEventListener("click", () => {
-//     modal.showModal();
-// });
-
-// btnCerrarModal.addEventListener("click", () => {
-//     modal.close();
-// })
 
 
-
-//actions
-// const BUTTON_ACTIONS = document.getElementById("buttons");
-// BUTTON_ACTIONS.innerHTML = `<button class = "searchTask">Buscar una fecha</button>
-//                             <button class = "createTask">Agendar nueva tarea</button>`;
 

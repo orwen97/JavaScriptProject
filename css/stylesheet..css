@@ -57,6 +57,8 @@ main {
     width: 25%;
     height: 30%;
     text-align: center;
+    border-style: none;
+    border-radius: 0.8rem;
 }
 
 .modalContainer {
@@ -74,7 +76,8 @@ main {
 
 .modalContainer p {
     grid-area: titulo;
-    padding: .8rem;
+    padding: 1.5rem;
+    font-size: 1.4rem;
 }
 
 #newTask {
