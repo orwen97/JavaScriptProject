@@ -48,13 +48,16 @@ DIAS_OBJETO.forEach(dia => {
         Swal.fire({
             title: "Tareas de la fecha",
             html: `
-            <form>
+            <form class="formAgendar">
+                <label for="inputTime">Fecha:</label>
+                <input type="date" id="inputfecha">
                 <label for="inputTime">Selecciona la hora:</label>
                 <input type="time" id="inputTime" name="inputTime">
-                <input type="text" id="inputTask" placeholder="Descripcion">
-                <input type="text" id="inputfecha" placeholder="dia">
+                <label for="inputTask">Descripcion:</label>
+                <input type="text" id="inputTask" placeholder ="">
             </form>
             `,
+            background : "#F0F0F0",
             confirmButtonText: "Agendar",
             showCancelButton: true,
             cancelButtonText: "Volver"
