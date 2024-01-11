@@ -51,34 +51,26 @@ DIAS_OBJETO.forEach(dia => {
     boton.dayNumber = dia.numero;
     boton.className = "daysButton";
     boton.innerHTML = `${dia.numero}`;
-    boton.addEventListener("click", () => {
-        debugger;
-        Swal.fire({
+    boton.addEventListener("click", async (event) => {
+        const { value: formValues } = await Swal.fire({
             title: "Tareas de la fecha",
             width : "40rem",
             html: `
-            <form class="formAgendar">
-                <label for="inputTime">Fecha:</label>
-                <input type="date" id="inputfecha">
                 <label for="inputTime">Selecciona la hora:</label>
                 <input type="time" id="inputTime" name="inputTime">
                 <label for="inputTask">Descripcion:</label>
                 <input type="text" id="inputTask" placeholder ="">
-            </form>
             `,
             background : "#F0F0F0",
             confirmButtonText: "Agendar",
             showCancelButton: true,
-            cancelButtonText: "Volver"
-        }).then((result) => {
-            if(result.isConfirmed){
-                //guardar value form en array objeto_dias
-                //guardo value de forms a variables
-                const valueFecha = document.getElementById("inputfecha").value;
-                const valueHora = document.getElementById("inputTime").value;
-                const valueTask = document.getElementById("inputTask").value;
-            }
+            cancelButtonText: "Volver",
         })
+        if(formValues) {
+            const valueTime = document.getElementById("inputTime").value;
+            const valueTask = document.getElementById("inputTask").value;
+            DIAS_OBJETO[event.target.dayNumber - 1].agregarTarea(valueTime, valueTask);
+        }
     })
     DAYS_MONTH.appendChild(boton);
 });
