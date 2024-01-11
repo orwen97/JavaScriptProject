@@ -22,6 +22,12 @@ class Dia {
 }
 DIAS.forEach(numero => DIAS_OBJETO.push(new Dia(numero)));
 
+
+// local storage
+
+
+
+
 // inicio
 function greeting() {
     alert("¡Bienvenido a tu agenda personal!");
@@ -42,11 +48,14 @@ const DAYS_MONTH = document.getElementById("daysMonth");
 
 DIAS_OBJETO.forEach(dia => {
     const boton = document.createElement("button");
+    boton.dayNumber = dia.numero;
     boton.className = "daysButton";
     boton.innerHTML = `${dia.numero}`;
     boton.addEventListener("click", () => {
+        debugger;
         Swal.fire({
             title: "Tareas de la fecha",
+            width : "40rem",
             html: `
             <form class="formAgendar">
                 <label for="inputTime">Fecha:</label>
@@ -61,13 +70,19 @@ DIAS_OBJETO.forEach(dia => {
             confirmButtonText: "Agendar",
             showCancelButton: true,
             cancelButtonText: "Volver"
+        }).then((result) => {
+            if(result.isConfirmed){
+                //guardar value form en array objeto_dias
+                //guardo value de forms a variables
+                const valueFecha = document.getElementById("inputfecha").value;
+                const valueHora = document.getElementById("inputTime").value;
+                const valueTask = document.getElementById("inputTask").value;
+            }
         })
     })
     DAYS_MONTH.appendChild(boton);
 });
-// const inputTime = document.getElementById("inputTime").value;
-// const inputTask = document.getElementById("inputTask").value;
-// const inputFecha = document.getElementById("inputFecha").value;
+
 
 
 //colorTheme
