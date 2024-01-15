@@ -70,7 +70,10 @@ DIAS_OBJETO.forEach(dia => {
             const valueTime = document.getElementById("inputTime").value;
             const valueTask = document.getElementById("inputTask").value;
             DIAS_OBJETO[event.target.dayNumber - 1].agregarTarea(valueTime, valueTask);
+
+            localStorage.setItem("agendas", JSON.stringify(DIAS_OBJETO));
         }
+        
     })
     DAYS_MONTH.appendChild(boton);
 });
