@@ -56,10 +56,11 @@ DIAS_OBJETO.forEach(dia => {
             title: "Tareas de la fecha",
             width : "40rem",
             html: `
-                <label for="inputTime">Selecciona la hora:</label>
-                <input type="time" id="inputTime" name="inputTime">
-                <label for="inputTask">Descripcion:</label>
-                <input type="text" id="inputTask" placeholder ="">
+            <p>Hola!</p>
+            <label for="inputTime">Selecciona la hora:</label>
+            <input type="time" id="inputTime" name="inputTime">
+            <label for="inputTask">Descripcion:</label>
+            <input type="text" id="inputTask" placeholder ="">
             `,
             background : "#F0F0F0",
             confirmButtonText: "Agendar",
@@ -70,8 +71,15 @@ DIAS_OBJETO.forEach(dia => {
             const valueTime = document.getElementById("inputTime").value;
             const valueTask = document.getElementById("inputTask").value;
             DIAS_OBJETO[event.target.dayNumber - 1].agregarTarea(valueTime, valueTask);
-
             localStorage.setItem("agendas", JSON.stringify(DIAS_OBJETO));
+        } 
+        if(formValues) {
+            Swal.fire({
+                title : "Agendado!",
+                icon : "success",
+                showConfirmButton : false,
+                timer: 1500
+            })
         }
         
     })
