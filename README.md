@@ -17,10 +17,10 @@ El desarrollo del proyecto quedó interrumpido y no cuenta con todas las funcion
 ## Visualización del Proyecto  
 
 El proyecto se encuentra desplegado y puede ser visualizado directamente desde el siguiente enlace:  
-[Ver Deployment en GitHub Pages](URL_DEL_DEPLOYMENT)  
+[Ver Deployment en GitHub Pages](https://orwen97.github.io/JavaScriptProject/)  
 
 ## Cómo Ejecutarlo Localmente  
 
 1. Clona el repositorio en tu máquina local:  
    ```bash
-   git clone https://github.com/tuusuario/nombre-del-repositorio.git
+   git clone https://github.com//orwen97/JavaScriptProject
